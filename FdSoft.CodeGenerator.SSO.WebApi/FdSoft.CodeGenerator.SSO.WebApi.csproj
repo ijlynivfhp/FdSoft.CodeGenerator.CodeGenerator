@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>FdSoft.CodeGenerator.SSO.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Controllers\Business\**" />
+		<Compile Remove="Controllers\System\**" />
+		<Compile Remove="Extensions\**" />
+		<Compile Remove="Filters\**" />
+		<Compile Remove="Framework\**" />
+		<Compile Remove="Middleware\**" />
+		<Content Remove="Controllers\Business\**" />
+		<Content Remove="Controllers\System\**" />
+		<Content Remove="Extensions\**" />
+		<Content Remove="Filters\**" />
+		<Content Remove="Framework\**" />
+		<Content Remove="Middleware\**" />
+		<EmbeddedResource Remove="Controllers\Business\**" />
+		<EmbeddedResource Remove="Controllers\System\**" />
+		<EmbeddedResource Remove="Extensions\**" />
+		<EmbeddedResource Remove="Filters\**" />
+		<EmbeddedResource Remove="Framework\**" />
+		<EmbeddedResource Remove="Middleware\**" />
+		<None Remove="Controllers\Business\**" />
+		<None Remove="Controllers\System\**" />
+		<None Remove="Extensions\**" />
+		<None Remove="Filters\**" />
+		<None Remove="Framework\**" />
+		<None Remove="Middleware\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Controllers\CommonController.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AspNetCoreRateLimit" Version="4.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="5.1.4" />
+		<PackageReference Include="Mapster" Version="7.3.0" />
+		<PackageReference Include="EPPlus" Version="6.0.5" />
+		<PackageReference Include="Hei.Captcha" Version="0.3.0" />
+		<PackageReference Include="Snowflake.Core" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\FdSoft.CodeGenerator.Core\FdSoft.CodeGenerator.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="ip2region.db">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+</Project>
